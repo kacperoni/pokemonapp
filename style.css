@@ -1,0 +1,88 @@
+html{
+    font-size: 16px;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url('./depositphotos_345634102-stock-illustration-pokeball-icon-sign-seamless-pattern.jpg');
+    font-family: 'Outfit', sans-serif;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    margin-top: 15vh;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    background-color: #FFFDEE;
+    border-radius: 25px;
+    height: 65vh;
+}
+
+.left{
+    width: 50vh;
+    background-image: url(./pikachu-g6ec30690c_1280.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+.right{
+    width: 50vh;
+    max-width: 50vh;
+    box-sizing: border-box;
+    padding: 1rem 4rem 1rem 4rem;
+}
+
+.register-link{
+    text-align: right;
+    color: #00233C;
+    font-weight: 400;
+    margin-left: 1rem;
+    margin-bottom: 3rem;
+}
+
+h1{
+    text-align: center;
+    font-weight: 700;
+    color:#00233C;
+    font-size: 3rem;
+    margin-bottom: 2.5rem;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input{
+    border:none;
+    border-radius: 15px;
+    width: 100%;
+    background-color: #e2e2e2;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1.2rem;
+    margin-bottom: 2.5vh;
+    box-sizing: border-box;
+}
+
+.button{
+    width: 100%;
+    background-color: #00233C;
+    color:#F2EFD2;
+    font-size: 1.5rem;
+    border-radius: 15px;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    font-weight: 600;
+}
+
+.recovery-password{
+    text-align: right;
+}
