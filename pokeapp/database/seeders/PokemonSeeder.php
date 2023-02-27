@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\DB;
+use App\Models\Pokemon;
 
 class PokemonSeeder extends Seeder
 {
@@ -16,20 +16,28 @@ class PokemonSeeder extends Seeder
     {
         $response = Http::get("https://pokeapi.co/api/v2/pokemon?limit=20");
         $pokemons = $response['results'];
-        $pokemonsToAdd = [];
+
         foreach($pokemons as $pokemon){
             $pokemonDetails = Http::get($pokemon['url'])->json();
-            $newPokemon = [
+            $pokemonTypes = $this->getPokemonTypes($pokemonDetails['types']);
+            Pokemon::create([
                 'name' => $pokemonDetails['name'],
                 'pokedex_id' => $pokemonDetails['id'],
                 'height' => $pokemonDetails['height'],
                 'weight' => $pokemonDetails['weight'],
-                'type' => $pokemonDetails['types'][0]['type']['name']
-            ];
+            ])->types()->attach($pokemonTypes);
+        }
+    }
 
-            $pokemonsToAdd[] = $newPokemon;
+    protected function getPokemonTypes($typesUrls): array
+    {   
+        $pokemonTypes = [];
+        foreach($typesUrls as $url){
+            $url = $url['type']['url'];
+            $response = Http::get($url)->json();
+            $pokemonTypes[] = $response['id'];
         }
 
-        DB::table('pokemons')->insert($pokemonsToAdd);
+        return $pokemonTypes;
     }
 }
