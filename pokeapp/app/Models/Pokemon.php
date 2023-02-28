@@ -15,4 +15,14 @@ class Pokemon extends Model
     {
         return $this->belongsToMany(Type::class, 'type_pokemon');
     }
+
+    public function getNdex(){
+        $id = strval($this->id);
+        $ndex = "#";
+        for($i=0; $i<4-strlen($id); $i++){
+            $ndex .= "0";
+        }
+        
+        return $ndex . $id;
+    }
 }

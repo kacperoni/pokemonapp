@@ -22,9 +22,10 @@ class PokemonSeeder extends Seeder
             $pokemonTypes = $this->getPokemonTypes($pokemonDetails['types']);
             Pokemon::create([
                 'name' => $pokemonDetails['name'],
+                'image_url' => $pokemonDetails['sprites']['front_default'],
                 'pokedex_id' => $pokemonDetails['id'],
-                'height' => $pokemonDetails['height'],
-                'weight' => $pokemonDetails['weight'],
+                'height' => $pokemonDetails['height']/10,
+                'weight' => $pokemonDetails['weight']/10,
             ])->types()->attach($pokemonTypes);
         }
     }
