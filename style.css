@@ -1,5 +1,6 @@
 html{
     font-size: 16px;
+    box-sizing: border-box;
 }
 
 body{
@@ -21,6 +22,7 @@ main{
     background-color: #FFFDEE;
     border-radius: 25px;
     height: 65vh;
+    flex-wrap: wrap;
 }
 
 .left{
@@ -47,7 +49,7 @@ main{
     margin-bottom: 3rem;
 }
 
-h1{
+.form-header{
     text-align: center;
     font-weight: 700;
     color:#00233C;
@@ -86,3 +88,152 @@ form{
 .recovery-password{
     text-align: right;
 }
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00233C;
+    color:#F2EFD2;
+    padding: 0.2rem 10rem;
+}
+
+.nav-header{
+    font-size: 2rem;
+    margin: 0;
+    cursor: pointer;
+}
+
+.nav-links{
+    list-style: none;
+}
+
+.nav-links li{
+    display: inline-block;
+}
+
+.nav-links li a{
+    color:#F2EFD2;
+    text-decoration: none;
+    padding: 0rem 5rem;
+    font-size: 1.2rem;
+    transition: all 0.3s ease 0s;
+}
+
+.nav-links li a:hover{
+    color:#f3e870;
+}
+
+.dropdown{
+    position: relative;
+}
+
+.dropdown a.user-button{
+    color:#F2EFD2;
+    text-decoration: none;
+    padding: .5rem 1rem;
+    font-size: 1.2rem;
+}
+
+.dropdown a.user-button:hover{
+    color: #f3e870;
+}
+
+.dropdown ol{
+    background-color: #013358;
+    width: 10vh;
+    position: absolute;
+    list-style: none;
+    border-radius: 10px;
+    padding: .5rem;
+    text-align: center;
+    box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.25);
+    margin-top: 0.5rem;
+    display: none;
+}
+
+.dropdown ol li{
+    padding: .5rem;
+}
+
+.dropdown ol li:hover a{
+    cursor: pointer;
+    color:#f3e870;
+}
+
+.dropdown ol li a{
+    color:#F2EFD2;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.dropdown a:focus + ol,
+.dropdown a:hover + ol,
+.dropdown ol:hover{
+    display: block;
+}
+
+.card-container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 60%;
+}
+
+.card{
+    min-width:50vh;
+    background-color: #D9D9D9;
+    margin: 0rem 2rem;
+    display: flex;
+    border-radius: 15px;
+    box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.25);
+    margin-bottom: 4rem;
+    transition: all ease-in 0.1s;
+}
+
+.card:hover{
+    scale: 1.05;
+}
+
+.card-image{
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    min-width:30vh;
+    background-image: linear-gradient(#F2EFD2, #D9D9D9);
+}
+
+.card-content{
+    font-family: 'Press Start 2P', cursive;
+    padding: .5rem 1rem;
+}
+
+/* @media (max-width: 800px){
+    main{
+        margin-top: 0;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 25px;
+        height: 65vh;
+    }
+
+    .left{
+        height: 50vh;
+    }
+
+    .right{
+        margin-top: 50vh;
+        width: 50vh;
+        max-width: 50vh;
+        box-sizing: border-box;
+        padding: 1rem 4rem 1rem 4rem;
+    }
+    
+} */
