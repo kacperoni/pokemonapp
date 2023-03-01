@@ -21,8 +21,9 @@ main{
     justify-content: center;
     background-color: #FFFDEE;
     border-radius: 25px;
-    height: 65vh;
+    min-height: 65vh;
     flex-wrap: wrap;
+    height: auto;
 }
 
 .left{
@@ -67,12 +68,29 @@ form{
     border:none;
     border-radius: 15px;
     width: 100%;
+    outline: none;
     background-color: #e2e2e2;
     font-size: 1rem;
     font-weight: 600;
     padding: 1.2rem;
-    margin-bottom: 2.5vh;
+    margin-top: 2rem;
     box-sizing: border-box;
+}
+
+.input:first-child{
+    margin-top:0rem;
+}
+
+.is-invalid{
+    border:1px solid red;
+}
+
+.invalid-feedback{
+    padding: 0rem 1.5rem;
+    margin-right: auto;
+    color:red;
+    font-size: 0.8rem;
+    margin-bottom: 0;
 }
 
 .button{
@@ -83,6 +101,14 @@ form{
     border-radius: 15px;
     padding: 0.5rem 1rem 0.5rem 1rem;
     font-weight: 600;
+    margin-top: 1.5rem;
+    transition: all 0.2s ease 0s;
+}
+
+.button:hover{
+    color:#f3e870;
+    background-color: #013358;
+    
 }
 
 .recovery-password{

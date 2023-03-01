@@ -15,6 +15,8 @@ use App\Http\Controllers\PokemonController;
 |
 */
 
-Route::get('/', WelcomeController::class)->name('login');
+// Route::get('/login', [WelcomeController::class, 'login'])->name('login');
 Route::get('/register', [WelcomeController::class, 'register'])->name('register');
-Route::get('/pokemons',[PokemonController::class, 'index'])->name('pokemons.index');
+Route::middleware(['auth'])->group(function(){
+    Route::get('/pokemons',[PokemonController::class, 'index'])->name('pokemons.index');
+});

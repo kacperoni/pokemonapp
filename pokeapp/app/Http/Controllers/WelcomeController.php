@@ -8,10 +8,10 @@ class WelcomeController extends Controller
 {
     public function __invoke()
     {
-        return view('login');
+        return view('auth.login');
     }
 
     public function register(){
-        return view('register');
+        return view('auth.register');
     }
 }
